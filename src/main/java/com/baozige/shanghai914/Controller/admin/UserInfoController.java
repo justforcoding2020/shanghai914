@@ -2,6 +2,7 @@ package com.baozige.shanghai914.Controller.admin;
 
 
 import com.baozige.shanghai914.POJO.UserInfo;
+import com.baozige.shanghai914.POJO.VO.UserInfoVo;
 import com.baozige.shanghai914.Service.UserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -36,4 +37,12 @@ public class UserInfoController {
         return number;
     }
     //用户信息修改
+    @ApiOperation(value = "对用户信息进行删除")
+    @PutMapping ("admin/auth/update")
+    public String removeUserInfo(@RequestBody UserInfoVo userInfoVo){
+        if (StringUtils.isBlank(number)) {
+            return "非法删除，请输入具体正确手机号";
+        }
+        return number;
+    }
 }
