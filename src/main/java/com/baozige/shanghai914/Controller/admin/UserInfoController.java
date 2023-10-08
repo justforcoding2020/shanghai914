@@ -45,4 +45,16 @@ public class UserInfoController {
         }
         return number;
     }
+    //用户信息修改
+    @ApiOperation(value = "对用户信息进行删除")
+    @PutMapping ("admin/auth/update/{userid}")
+    public String removeUserInfo(@RequestBody UserInfoVo userInfoVo,@PathVariable Long userid){
+        if (StringUtils.isBlank(number)) {
+            return "非法删除，请输入具体正确手机号";
+        }
+        return number;
+    }
+    /**
+     * 新建股票投资需求
+     */
 }
